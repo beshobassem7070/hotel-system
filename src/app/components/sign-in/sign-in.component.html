@@ -1,0 +1,168 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5" >
+          <div class="row">
+            <div class="col-lg-7  col-md-7 col-sm-7" >
+                <img src="{{img1}}" class="img-fluid toplog" width="100%" height="100%" style="margin-top: 80px; display: inline-block;">
+
+            </div>
+            <div class="col-lg-5  col-md-5 col-sm-5" >
+                <h1 style="margin-top: 80px;" class="leftlog"> my visitor dear, now you will create account first to reservation a room</h1>
+
+            </div>
+            
+        </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7" >
+            <div class="signin">
+                <h1  style="font-size: 60px;">SIGNUP</h1>
+                <form #f="ngForm" (ngSubmit)='signIn(f)'>
+                        <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="in">
+                    <input ngModel name="name" #name='ngModel' type="text"  placeholder="user name" required>
+                    <p class="error" *ngIf='name.invalid && name.touched'>name is required</p>
+                </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="in">
+                    <input ngModel name='phone' #phone='ngModel'  type="number"  placeholder="phone number" required>
+                    <p class="error" *ngIf='phone.invalid && phone.touched'>phone is required and be number</p>
+                </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="in">
+                    <input ngModel name='email' #email='ngModel'  type="email"  placeholder="email" required email>
+                    <p class="error" *ngIf='email.touched && email.errors?.required'> email is required</p>
+                    <p class="error" *ngIf='email.touched && email.errors?.email'> Your input is not email</p>
+                </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="in">
+                    <input ngModel name='password' #password='ngModel' type="password"  placeholder="password" required minlength="8">
+                    <p class="error" *ngIf='password.touched && password.errors?.required'>password is required</p>
+                    <p class="error" *ngIf='password.touched && password.errors?.minlength'> password should be mare or equel 8 number</p>
+                </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="in">
+                    <input ngModel name='conpassword' #passwordCon='ngModel'  type="password"  placeholder="confarm password" required>
+                    <p class="error" *ngIf='passwordCon.invalid && passwordCon.touched'>password confarm is required</p>
+                    <p class="error" *ngIf='passwordCon.value !== password.value && passwordCon.touched'>password isn't equel</p>
+                </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="in">
+                    <select  ngModel name='city' #city='ngModel'   required style="color:bkack;" >
+                        <option selected >Egypt</option>
+                        <option >united states</option>
+                        <option >france</option>
+                        <option >italia</option>
+                        <option >brazil</option>
+                        <option >russia</option>
+                        <option >germany</option>
+                        <option >morco</option>
+                        <option >banama</option>
+                        <option >china</option>
+                        <option >japanisse</option>
+                        <option >pero</option>
+                        <option >canada</option>
+                        <option >lebnan</option>
+                        <option >libya</option>
+                    </select>
+                    <p class="error" *ngIf='city.invalid && city.touched'>city is required</p>
+                </div>
+                </div>
+                </div>
+
+                <div class="row">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 divBu">
+                                <button  [disabled]='f.invalid  || passwordCon.value !== password.value' >Create acount</button>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                    </div>
+                    
+                </form>
+                <p class="error" *ngIf='errorMassage'>{{errorMassage}}</p>
+                <!--<form class="needs-validation" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustomUsername">Username</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                              <div class="invalid-feedback">
+                                Please choose a username.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationCustom03">City</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid city.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom04">State</label>
+                            <select class="custom-select" id="validationCustom04" required>
+                              <option selected disabled value="">Choose...</option>
+                              <option>...</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Please select a valid state.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom05">Zip</label>
+                            <input type="text" class="form-control" id="validationCustom05" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid zip.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                              Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                      
+                    -->
+            </div>
+        </div>
+    </div>
+</div>

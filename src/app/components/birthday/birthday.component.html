@@ -1,0 +1,167 @@
+<div class="all">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <img
+          src="{{ img1 }}"
+          class="img-fluid toplog"
+          width="100%"
+          height="100%"
+          style="margin-top: 80px; display: inline-block;"
+        />
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <h1>birthday</h1>
+        <form #f="ngForm" (ngSubmit)="reservation(f)">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 in">
+              <span> name </span>
+              <input
+                ngModel
+                name="name"
+                #namee
+                #name="ngModel"
+                type="text"
+                id="name"
+                required
+              />
+              <p class="error" *ngIf="name.touched && name.errors?.required">
+                name is required
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 in">
+              <span> Start Date: </span>
+              <input
+                ngModel
+                name="date1"
+                #datee1
+                #date1="ngModel"
+                type="date"
+                id="date1"
+                required
+              />
+              <p class="error" *ngIf="date1.touched && date1.errors?.required">
+                date is required
+              </p>
+            </div>
+
+            <!--*****************-->
+
+            <div class="col-lg-6 col-md-6 col-sm-6 in">
+              <span> number of visitor </span>
+              <input
+                type="number"
+                ngModel
+                name="number"
+                #numberr
+                #number="ngModel"
+                required
+                style="color: black;"
+              />
+
+              <p class="error" *ngIf="number.invalid && number.touched">
+                number is required
+              </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 in">
+              <span> size of cake</span>
+              <select
+                ngModel
+                name="size"
+                #sizee
+                #size="ngModel"
+                required
+                style="color: black;"
+              >
+                <option>small</option>
+                <option>mediam</option>
+                <option>large</option>
+              </select>
+              <p class="error" *ngIf="size.invalid && size.touched">
+                type is required
+              </p>
+            </div>
+
+            <!--//////////////////////-->
+            <div class="container mt-3">
+              <!-- Button to Open the Modal -->
+
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 divBu">
+                  <button
+                    [disabled]="f.invalid"
+                    data-toggle="modal"
+                    data-target="#myModal2"
+                    *ngIf="!isUser"
+                    (click)="
+                      combook(
+                        namee.value,
+                        datee1.value,
+                        numberr.value,
+                        sizee.value
+                      )
+                    "
+                  >
+                    comfare book
+                  </button>
+                  <h4 *ngIf="isUser" style="color: red;">
+                    you must log in first
+                  </h4>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+              </div>
+              <!-- The Modal -->
+              <div class="modal fade" id="myModal2">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Congratulation</h4>
+                      <button
+                        class="ex"
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        style="
+                          background: none;
+                          color: #052746;
+                          margin-right: 10px;
+                          width: 25px;
+                          height: 25px;
+                          box-shadow: none;
+                        "
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      Reservation successfully
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button class="button" type="button" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--//////////////////////-->
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

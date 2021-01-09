@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5" >
+            <div class="row">
+                <div class="col-lg-7  col-md-7 col-sm-7" >
+                    <img src="{{img1}}" class="img-fluid toplog" width="100%" height="100%" style="margin-top: 80px; display: inline-block;">
+
+                </div>
+                <div class="col-lg-5  col-md-5 col-sm-5" >
+                    <h1 style="margin-top: 80px;" class="leftlog"> my visitor, now you will login first</h1>
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7" >
+            <div class="signin">
+                <h1 style="font-size: 60px;">LOGIN</h1>
+                
+                <form #f="ngForm" (ngSubmit)='lognIn(f)'>
+                <div class="row">
+            
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="inEmail">
+                        <input ngModel name='email' #email='ngModel' type="email" placeholder="email" required email>
+                        <p class="error" *ngIf='email.touched && email.errors?.required'> email is required</p>
+                        <p class="error" *ngIf='email.touched && email.errors?.email'> Your input is not email</p>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="inPass">
+                        <input ngModel name='password' #password='ngModel' type="password" placeholder="password"
+                            required minlength="8">
+
+                        <p class="error" *ngIf='password.touched && password.errors?.required'>password is required</p>
+                        <p class="error" *ngIf='password.touched && password.errors?.minlength'> password should be mare
+                            or equel 8 number</p>
+                    </div>
+                    </div>
+                </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 divBu">
+                            <button [disabled]='f.invalid  '> <i class="fas fa-unlock-alt"></i> log in</button>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                    </div>
+
+
+
+                </form>
+
+                <p class="error" *ngIf='errorMassage'>{{errorMassage}}</p>
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 divBu" style="margin-top: 50px;">
+                        <p style="margin-bottom: -20px; text-align: center; color:white">if you don't have account you can creat accont now</p>
+                        <button routerLink="/signIn"> <i class="fas fa-unlock-alt"></i>SIGN IN</button>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

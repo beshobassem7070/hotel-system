@@ -1,0 +1,22 @@
+body {
+    color: #80b280;
+}
+.date {
+    color: white;
+    position: fixed;
+    right: 50px;
+    top: 100px;
+    transition: all 1s ease-in-out;
+}
+.up {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #052746;
+    color: #ffff66;
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 50px;
+    display: none;
+    cursor: pointer;
+}

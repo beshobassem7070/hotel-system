@@ -1,0 +1,173 @@
+<div class="all">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div>
+          <h1>your reservation bussnis Room</h1>
+          <input type="text" #myInput [(ngModel)]="name1" />
+
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col"><h4>name</h4></th>
+                <th scope="col"><h4>start date</h4></th>
+                <th scope="col"><h4>number of date</h4></th>
+                <th scope="col"><h4>room type</h4></th>
+                <th scope="col"><h4>young</h4></th>
+                <th scope="col"><h4>child</h4></th>
+                <th scope="col"><h4>price</h4></th>
+                <th scope="col"><h4>delete</h4></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let book of books; index as i">
+              <tr>
+                <td>
+                  <h5>{{ book.name1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.date1d }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.dated2 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.type }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.young }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.child }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book.dated2 * 300 }}</h5>
+                </td>
+
+                <td><button (click)="cancel(i)">cancel</button></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h1>your reservation class Room</h1>
+          <input type="text" [(ngModel)]="name2" />
+
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col"><h4>name</h4></th>
+                <th scope="col"><h4>start date</h4></th>
+                <th scope="col"><h4>number of date</h4></th>
+                <th scope="col"><h4>room type</h4></th>
+
+                <th scope="col"><h4>young</h4></th>
+                <th scope="col"><h4>child</h4></th>
+                <th scope="col"><h4>price</h4></th>
+                <th scope="col"><h4>delete</h4></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let book1 of books2 | filter: name2; index as i">
+              <tr>
+                <td>
+                  <h5>{{ book1.name1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.date1d }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.dated2 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.type }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.young }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.child }}</h5>
+                </td>
+                <td>
+                  <h5>{{ book1.dated2 * 200 }}</h5>
+                </td>
+
+                <td><button (click)="cancel(i)">cancel</button></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- birthday -->
+          <h1>your reservation of birthday</h1>
+          <input type="text" #myInput [(ngModel)]="name3" />
+
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col"><h4>name</h4></th>
+                <th scope="col"><h4>date</h4></th>
+                <th scope="col"><h4>number</h4></th>
+                <th scope="col"><h4>size</h4></th>
+                <th scope="col"><h4>delete</h4></th>
+              </tr>
+            </thead>
+
+            <!-- birthday -->
+            <tbody *ngFor="let births of birth | filter: name3; index as i">
+              <tr>
+                <td>
+                  <h5>{{ births.name1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ births.dated2 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ births.number1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ births.size1 }}</h5>
+                </td>
+
+                <td><button (click)="cancel2(i)">cancel</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- wedding -->
+          <h1>your reservation of wedding</h1>
+          <input type="text" #myInput [(ngModel)]="name4" />
+
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col"><h4>name</h4></th>
+                <th scope="col"><h4>date</h4></th>
+                <th scope="col"><h4>time</h4></th>
+                <th scope="col"><h4>unmber</h4></th>
+                <th scope="col"><h4>delete</h4></th>
+              </tr>
+            </thead>
+
+            <!-- wedding -->
+            <tbody *ngFor="let wed of wedd | filter: name4; index as i">
+              <tr>
+                <td>
+                  <h5>{{ wed.name1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ wed.date1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ wed.time1 }}</h5>
+                </td>
+                <td>
+                  <h5>{{ wed.number1 }}</h5>
+                </td>
+
+                <td><button (click)="cancel3(i)">cancel</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

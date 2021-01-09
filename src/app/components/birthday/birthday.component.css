@@ -1,0 +1,133 @@
+.all {
+    margin-top: 100px;
+    color: white;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 200px ;
+}
+h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+p {
+    margin-left: 20px ;
+}
+ul li {
+    list-style: none;
+    margin-top: 20px;
+    margin-left: 0;
+}
+.pussBook  {
+    border:1px solid black;
+    background: linear-gradient(to right, #052746 , #ffff66);
+    border-radius: 20px 0 0px 20px;
+}
+.classBook {
+    border:1px solid black;
+    background: linear-gradient(to right, #ffff66 , #052746);
+    border-radius: 0px 20px 20px 0px;
+}
+s {
+    color: red;
+}
+button {
+    background:#052746 ;
+    color: #ffff66;
+    width: 100%;
+    height: 70px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.divBu {
+    margin: auto;
+    text-align: center;
+}
+button:hover {
+    box-shadow: 0px 5px 5px rgb(44, 47, 70);
+    transform: scale(1.1,1.1);
+}
+/******/
+
+input , select  {
+    height: 50px;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    margin: auto;
+    background: none;
+ color: white;
+ border: none;
+ border-bottom: 2px solid #ffff66;
+ border-left: 2px solid #ffff66;
+ border-radius: 7px;
+ transition: all 0.5s ease-in-out;
+}
+input:focus {
+    box-shadow: 0px 5px 5px rgb(44, 47, 70);
+    transform: scale(1.1,1.1);
+}
+span {
+    color: white;
+    font-size: 18px;
+}
+.in {
+    margin-top:30px ;
+} 
+.error {
+    color: red;
+}
+.divBu {
+    margin-top: 60px;
+}
+button {
+    background:#052746 ;
+    color: #ffff66;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 0px 5px 5px rgb(44, 47, 70);
+    transform: scale(1.1,1.1);
+}
+.modal-header , .modal-body {
+    color: #052746;
+}
+.custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }
+  .date {
+      width: 100px;
+  }
+
+

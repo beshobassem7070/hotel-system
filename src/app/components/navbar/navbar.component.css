@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    font-family: 'Robono Cn' , sans-serif;
+}
+a {
+    text-decoration: none;
+    color:white;
+}
+header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+.container {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+nav {
+    padding-top: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    text-transform: uppercase;
+    font-size: 1rem;
+    
+}
+.brand {
+    font-size: 3rem;
+    font-weight: 300;
+    padding-left: 1rem;
+    transform: translateX(-100rem);
+    animation: slideIn .5s forwards;
+}
+img {
+    margin-top: px;
+}
+.brand span {
+    color: #052746;
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+    
+}
+nav ul li:nth-child(1){
+    animation-delay: 0s;
+}
+nav ul li:nth-child(2){
+    animation-delay: .3s;
+}
+nav ul li:nth-child(3){
+    animation-delay: .6s;
+}
+nav ul li:nth-child(4){
+    animation-delay: .9s;
+}
+nav ul li:nth-child(5){
+    animation-delay: 1.2s;
+}
+nav ul li:nth-child(6){
+    animation-delay: 1.5s;
+}
+nav ul li:nth-child(7){
+    animation-delay: 1.8s;
+}
+nav  ul li  a {
+    padding:  1rem 0;
+    margin: 0 1rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+nav ul li a:last-child {
+    margin-right: 0;
+}
+nav ul li a::before, nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #052746;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+nav ul li a::before {
+    top: 0;
+    transform-origin: left;
+}
+nav ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+nav ul li a:hover::before, nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes slideIn {
+    from {
+
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.navbar-toggler {
+    transform: translate(-5%,-50%);
+}
+@media srceen and (max-width:768px) {
+    .navbar-nav {
+        clip-path: circle(500px at 90% -10%);
+        -webkit-clip-path: circle(800px at 90% -10%);
+        transition: all 1s ease-in-out;
+    }
+    .navbar-nav.open {
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+    }
+}
+.navScroll {
+    background-image: linear-gradient(to right, #052746 , #ffff66);
+    
+    box-shadow: 0 3px 20px rgba(black , 0.2);
+    transition: all 0.5s ease-in-out;
+    opacity: 0.7;
+    
+}
+.linkScroll {
+    color: white;
+}

@@ -1,0 +1,110 @@
+<div class="all">
+    <h1>greate choose</h1>
+    <!--<input type="date">
+    <input type="date">-->
+    <div class="container">
+            <form #f="ngForm" (ngSubmit)='reservation(f)'>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 in" >
+            <span> Start Date: </span> <input  ngModel name='date' [(ngModel)]="start" [ngModelOptions]="{standalone: true}"  #date='ngModel'  type="date" id="startDate" required  />
+            <p class="error" *ngIf='date.touched && date.errors?.required'> email is required</p>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 in" >
+            <span> End Date: </span> <input  ngModel name='date2 ' [(ngModel)]="end" [ngModelOptions]="{standalone: true}"  #date2='ngModel'  type="date" id="endDate"  required />
+            <p class="error" *ngIf='date2.touched && date2.errors?.required'> email is required</p>
+
+        </div>
+        <!--*****************-->
+        <div class="col-lg-6 col-md-6 col-sm-6 in" >
+                <span> type of room: </span> 
+                        <select  ngModel name='type' #tt   #type='ngModel'   required style="color: black;">
+                            <option >single room</option>
+                            <option >double room</option>
+                            <option >triple room</option>
+                        </select>
+                        <p class="error" *ngIf='type.invalid && type.touched'>type is required</p>
+                    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 in" >
+            <span> number of visitor (young): </span> 
+                    <select  ngModel name='young'   #young='ngModel'   required style="color: black;">
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                        <option >6</option>
+                    </select>
+                    <p class="error" *ngIf='young.invalid && young.touched'>type is required</p>
+                </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 in" >
+                <span> number of visitor (child):</span> 
+                        <select  ngModel name='child'   #child='ngModel'   required style="color: black;">
+                                <option >1</option>
+                                <option >2</option>
+                                <option >3</option>
+                                <option >4</option>
+                                <option >5</option>
+                                <option >6</option>
+                        </select>
+                        <p class="error" *ngIf='child.invalid && child.touched'>type is required</p>
+                    </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 in" >
+                <p>now u will reservation room from {{start}}  to {{end}}  we wait for you , to confarme enter reservation now  </p>
+                 
+        </div>
+
+    
+            
+        
+        <!--**********-->
+        
+        </div>
+        
+        <div class="container mt-3">
+            <!-- Button to Open the Modal -->
+            
+            <div class="row">
+                
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            
+                <div class="col-lg-6 col-md-6 col-sm-6 divBu">
+                    <button class="button" [disabled]='f.invalid' data-toggle="modal" data-target="#myModal" >RESERVATION</button> <!--(click)="book( tt.value , young.value , child.value)"-->
+            
+                </div>
+            
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            </div>
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Congratulation</h4>
+                    <button class="ex" type="button" class="close" data-dismiss="modal">×</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    Reservation successfully
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button class="button" type="button"  data-dismiss="modal">Close</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        
+        </form>
+        </div>
+        
+</div>

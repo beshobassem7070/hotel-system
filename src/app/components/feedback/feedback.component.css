@@ -1,0 +1,13 @@
+.all {
+    padding-top: 100px;
+}
+.feedback {
+    border-left: 10px solid #ffff66;
+}
+.feed {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+h1 {
+    color: white;
+}
